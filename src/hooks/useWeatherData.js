@@ -5,7 +5,7 @@ import { throttle } from '../utils/throttle';
 import { fetchRealWeather } from '../api/openWeatherApi';
 import { fetchMockWeather } from '../api/mockWeatherApi';
 
-const API_MODE = 'real';
+const API_MODE = 'real'; // mock datani test qilish uchun 'real' ni 'mock' ga almashtiring
 
 const throttledFetch = throttle(API_MODE === 'real' ? fetchRealWeather : fetchMockWeather, 5000);
 
