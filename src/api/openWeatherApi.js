@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from '../constants';
+import {API_ENDPOINT} from '../constants';
 
 const API_KEY = import.meta.env.VITE_OWM_API_KEY;
 
