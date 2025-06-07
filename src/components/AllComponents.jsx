@@ -134,21 +134,30 @@ export const DataVisualization = ({ data, units }) => {
 
 
 // --- SettingsPanel ---
-export const SettingsPanel = ({ units, onUnitToggle, onThemeToggle }) => {
+export const ThemeUnitSwitch = ({units, onUnitToggle, isDarkMode, onThemeToggle}) => {
   return (
       <div className="settings-panel">
         <div className="setting-item">
-          <span>Units:</span>
-          <button onClick={onUnitToggle}>{units === 'metric' ? 'Celsius °C' : 'Fahrenheit °F'}</button>
+          <label className="switch">
+            <input type="checkbox" onChange={onUnitToggle} checked={units === "imperial"} />
+            <span className="slider round">
+            <span className="label left">°C</span>
+            <span className="label right">°F</span>
+          </span>
+          </label>
         </div>
         <div className="setting-item">
-          <span>Theme:</span>
-          <button onClick={onThemeToggle}>Toggle Dark/Light</button>
+          <label className="switch">
+            <input type="checkbox" onChange={onThemeToggle} checked={isDarkMode} />
+            <span className="slider round">
+            <span className="icon sun">☀️</span>
+            <span className="icon moon">🌙</span>
+          </span>
+          </label>
         </div>
       </div>
   );
 };
-
 
 // --- WeatherWidget (Main Container) ---
 export const WeatherWidget = () => {
@@ -185,7 +194,12 @@ export const WeatherWidget = () => {
       <div className={`weather-widget ${theme}`}>
         <header>
           <h1>Weather Dashboard</h1>
-          <SettingsPanel units={state.units} onUnitToggle={toggleUnit} onThemeToggle={toggleTheme} />
+          <ThemeUnitSwitch
+              units={state.units}
+              onUnitToggle={toggleUnit}
+              isDarkMode={theme === "dark"}
+              onThemeToggle={toggleTheme}
+          />
         </header>
 
         <CitySelector selectedCity={state.city} onCityChange={handleCityChange} />
