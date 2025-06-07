@@ -5,7 +5,7 @@ import { throttle } from '../utils/throttle';
 import { fetchRealWeather } from '../api/openWeatherApi';
 import { fetchMockWeather } from '../api/mockWeatherApi';
 
-const API_MODE = 'mock';
+const API_MODE = 'real';
 
 const throttledFetch = throttle(API_MODE === 'real' ? fetchRealWeather : fetchMockWeather, 5000);
 
