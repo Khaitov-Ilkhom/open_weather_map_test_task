@@ -176,9 +176,9 @@ input:checked + .slider:before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 18px;
   color: white;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .slider .sun {
@@ -193,7 +193,7 @@ input:checked + .slider:before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   color: #142d52;
   opacity: 0.8;
@@ -204,7 +204,7 @@ input:checked + .slider:before {
 }
 
 .slider .right {
-  right: 8px;
+  right: 9px;
 }
 
 /* Responsive */
@@ -221,6 +221,10 @@ input:checked + .slider:before {
 
   .data-visualization {
     width: 300px;
+  }
+
+  .tabs button {
+    font-size: 15px;
   }
 
   .city-selector select {

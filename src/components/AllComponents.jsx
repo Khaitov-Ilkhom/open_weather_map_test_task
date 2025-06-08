@@ -141,7 +141,7 @@ export const ThemeUnitSwitch = ({units, onUnitToggle, isDarkMode, onThemeToggle}
           <label className="switch">
             <input type="checkbox" onChange={onUnitToggle} checked={units === "imperial"} />
             <span className="slider round">
-            <span className="label left">°C</span>
+            <span style={units === "metric" ? {} : {color: "#fff"}} className="label left">°C</span>
             <span className="label right">°F</span>
           </span>
           </label>
