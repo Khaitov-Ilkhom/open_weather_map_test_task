@@ -19,7 +19,7 @@ Bu frontend dasturchilari uchun texnik imtihon doirasida yaratilgan interaktiv o
 1.  **Omborni klonlash (nusxalash):**
     ```bash
     git clone <repository_url>
-    cd weather-dashboard-widget
+    cd open_weather_map_test_task
     ```
 
 2.  **Bog'liqliklarni o'rnatish:**
